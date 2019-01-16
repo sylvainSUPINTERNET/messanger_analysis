@@ -56,6 +56,7 @@ def timeBetweenMessages(jsonMsgData):
 Draw frequence curve for messages
 """
 def frequencyMessage(jsonMsgData):
+
     trace1 = go.Scatter(
         x=[0, 1, 2, 3, 4, 5, 6, 7, 8],
         y=[1, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -78,7 +79,7 @@ def frequencyMessage(jsonMsgData):
             )
         ),
         yaxis=dict(
-            title='y Days',
+            title='y Times (ms)',
             titlefont=dict(
                 family='Courier New, monospace',
                 size=18,
@@ -91,3 +92,6 @@ def frequencyMessage(jsonMsgData):
     return "rate TODO"
 
 
+
+
+# todo http://lablanchisserie.fr/extern-links/iim/python/Projet%20de%20la%20semaine%20data%20science.pdf
