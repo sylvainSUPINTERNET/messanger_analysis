@@ -47,3 +47,13 @@
 ### Features 
 
             // TODO
+            
+            
+### Get started  
+
+<code>
+    $ python3 main.py 
+</code>
+       
+       
+  
