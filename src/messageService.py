@@ -1,5 +1,6 @@
 import src.utils as Utils
 import json
+from pprint import pprint
 
 """
 Parse messanger message format JSON
@@ -119,4 +120,31 @@ def getBiggestPave(jsonMsgData):
         score[message["sender_name"]] = Utils.compare(score[message["sender_name"]], len(message["content"]))
 
     return Utils.sortDictDesc(score)
+
+
+"""
+Return dictionnary -> time between 2 messages (message 1 - timestamp : message 2 - timestamp, message 2 ....)
+"""
+
+
+def calculResponseTimeBetween2Messages(jsonMsgData):
+    response_times = {}
+
+    messages_size_limit = len(jsonMsgData["messages"]) - 1
+    for index, message in enumerate(getMessages(jsonMsgData)):
+        if index < messages_size_limit:
+            print(message["content"])
+            print("__________________________________________")
+            print(getMessages(jsonMsgData)[index+1]["content"])
+
+            response_times["msg_" + index.__str__()] = [message["timestamp_ms"],
+                                                        getMessages(jsonMsgData)[index + 1]["timestamp_ms"]]
+
+        # print(message["timestamp_ms"])  # timestamp msg1
+        # print(getMessages(jsonMsgData)[index + 1]["timestamp_ms"])  # response timestamp to msg1
+        # print("ok")
+        # go 2 by 2 ...
+    pprint(response_times)
+
+
 

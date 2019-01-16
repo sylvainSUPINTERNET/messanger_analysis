@@ -19,19 +19,19 @@ def curveCompareFrequencyAndResponseTime(jsonMsgData):
     for message in jsonMsgData["messages"]:
         messages_dates.append(Utils.convertMsInDatetime(message["timestamp_ms"]))
 
-    trace1 = go.Scatter(
+    freq = go.Scatter(
         x=messages_dates,
         y=[1, 2, 3, 4, 5, 6, 7, 8, 9],
-        name='Rate'
+        name='Frequency'
     )
-    trace2 = go.Scatter(
+    resT = go.Scatter(
         x=messages_dates,
-        y=[1, 0, 3, 4, 5, 6, 7, 8, 9],
-        name='Latency'
+        y=[1, 0, 3, 4, 5, 6, 10, 8, 9],
+        name='Reponse time'
     )
-    data = [trace1, trace2]
+    data = [freq, resT]
     layout = go.Layout(
-        title='Compaire messages rate and latency',
+        title='Compaire messages frequency and response time',
         xaxis=dict(
             title='x Datetime',
             titlefont=dict(
@@ -41,7 +41,7 @@ def curveCompareFrequencyAndResponseTime(jsonMsgData):
             )
         ),
         yaxis=dict(
-            title='y Quantity',
+            title='y Unit',
             titlefont=dict(
                 family='Courier New, monospace',
                 size=18,
@@ -50,7 +50,7 @@ def curveCompareFrequencyAndResponseTime(jsonMsgData):
         )
     )
     fig = go.Figure(data=data, layout=layout)
-    plot_url = plotly.offline.plot(fig, filename='./dist/frequency_latency_messages_stats')
+    plot_url = plotly.offline.plot(fig, filename='./dist/frequency_responseTime_messages_stats')
     return "rate TODO"
 
 # todo http://lablanchisserie.fr/extern-links/iim/python/Projet%20de%20la%20semaine%20data%20science.pdf
