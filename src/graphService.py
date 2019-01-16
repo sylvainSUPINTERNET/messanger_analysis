@@ -50,7 +50,7 @@ def curveCompareFrequencyAndResponseTime(jsonMsgData):
         )
     )
     fig = go.Figure(data=data, layout=layout)
-    plot_url = plotly.offline.plot(fig, filename='frequency_latency_messages_stats')
+    plot_url = plotly.offline.plot(fig, filename='./dist/frequency_latency_messages_stats')
     return "rate TODO"
 
 # todo http://lablanchisserie.fr/extern-links/iim/python/Projet%20de%20la%20semaine%20data%20science.pdf
