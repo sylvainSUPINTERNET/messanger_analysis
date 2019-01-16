@@ -46,4 +46,4 @@ print("_______________________________")
 
 
 #GraphService.timeBetweenMessages(jsonData)
-GraphService.frequencyMessage(jsonData)
+GraphService.curveCompareFrequencyAndResponseTime(jsonData)
