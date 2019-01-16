@@ -1,0 +1,186 @@
+{
+  "participants": [
+    {
+      "name": "M\u00c3\u00a9li Melo"
+    },
+    {
+      "name": "Tristan Pavard"
+    },
+    {
+      "name": "Sylvain Joly"
+    },
+    {
+      "name": "Emeric Bernet"
+    },
+    {
+      "name": "Val Ends"
+    }
+  ],
+  "messages": [
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546956325119,
+      "content": "Ce serait bien, pour qu'il puisse au moins \u00c3\u00aatre au courant de notre avanc\u00c3\u00a9 visuellement",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Emeric Bernet",
+      "timestamp_ms": 1546954889832,
+      "content": "Il faut qu'on ai un truc un minimum pr\u00c3\u00a9sentable, je pense",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Emeric Bernet",
+      "timestamp_ms": 1546954871148,
+      "content": "Si on me donne les bases, je peux bosser un peu le design",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546948006618,
+      "content": "Ce serait le derni\u00c3\u00a8re aspect a travailler, ne t'en fait pas",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546947838233,
+      "content": "mais niveau design c'est pas beau clairement",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546947816202,
+      "content": "Je pense ce week end",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546947098095,
+      "content": "Ah ce serait top ! Tu peux me l'envoyer pour quand ?",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546946526407,
+      "content": "A vu de nos emploi du temps et l'avanc\u00c3\u00a9 de l'app il est mieux je pense de faire une video du rendy",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546945167178,
+      "content": "D'accord, est ce que quelqu'un d'entre vous est disponible pour faire un rendez vous client, et montrer un peu ce que l'on a fait ?",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546942808188,
+      "content": "trop compliquer pour le lancer depuis son poste je pense",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546942758451,
+      "content": "Pour que je puisse faire un point avec le client",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546942744057,
+      "content": "Est ce que vous avez une version recette que je pourrai voir ?",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546942708954,
+      "content": "Ah c'est cool",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546942692360,
+      "content": "Je vais bien \u00f0\u009f\u0098\u0089",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "M\u00c3\u00a9li Melo",
+      "timestamp_ms": 1546942332369,
+      "content": "J ai r\u00c3\u00a9gl\u00c3\u00a9 les conflits en am\u00c3\u00a9liorant la config.",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "M\u00c3\u00a9li Melo",
+      "timestamp_ms": 1546942302519,
+      "content": "J ai fais un merge de la branche geoloc sur dev avec un autre merge de la branche cart",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "M\u00c3\u00a9li Melo",
+      "timestamp_ms": 1546942252160,
+      "content": "J ai un peux avanc\u00c3\u00a9 sur la partie panier. Je continue ce soir.",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546941993734,
+      "content": "j'ai ajout\u00c3\u00a9 la geolication exacte avec nom de rue /ville + ajout de la page home sous forme de card avec les infos de fb.\nJe vais avanc\u00c3\u00a9 maintdnant sur la partie user / commercant",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546941928853,
+      "content": "Le projet \u00c3\u00a0 l\u00c3\u00a9g\u00c3\u00a8rement avanc\u00c3\u00a9",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546941873647,
+      "content": "impec et toi ?",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546941846625,
+      "content": "Oui \u00c3\u00a7a va, alors les f\u00c3\u00aates \u00c3\u00a7a \u00c3\u00a9t\u00c3\u00a9 ?",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546941802554,
+      "content": "bonne ann\u00c3\u00a9e bien et toi ?",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546941784048,
+      "content": "Comment tu vas ?",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546941773783,
+      "content": "Val a envoy\u00c3\u00a9 un GIF de Tenor GIF Keyboard.",
+      "gifs": [
+        {
+          "uri": "messages/inbox/ProjectUmber_EhDg1OzYeQ/gifs/21536185_545689149109584_8248200781744832512_n_2861412710543273.gif"
+        }
+      ],
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Sylvain Joly",
+      "timestamp_ms": 1546941672265,
+      "content": "Salut",
+      "type": "Generic"
+    },
+    {
+      "sender_name": "Val Ends",
+      "timestamp_ms": 1546940972754,
+      "content": "Bonjour tout le monde !",
+      "type": "Generic"
+    }
+  ],
+  "title": "Project Umber",
+  "is_still_participant": true,
+  "thread_type": "RegularGroup",
+  "thread_path": "inbox/ProjectUmber_EhDg1OzYeQ"
+}
