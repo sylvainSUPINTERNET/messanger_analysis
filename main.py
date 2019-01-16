@@ -2,28 +2,6 @@ import src.messageService as MessageService
 import src.graphService as GraphService
 
 from pprint import pprint
-import numpy as np
-
-import plotly.plotly as py
-import plotly.graph_objs as go
-
-import plotly.graph_objs
-
-# N = 500
-# random_x = np.linspace(0, 1, N)
-# random_y = np.random.randn(N)
-
-# Create a trace
-# trace = go.Scatter(
-#   x = random_x,
-#  y = random_y
-# )
-
-# plotly.offline.plot({
-# "data": [
-#  plotly.graph_objs.Bar(x=['test1', 'test2', 'test3'], y=[3.4, 4.2, 4.3]),
-# ]
-# })
 
 
 # Messages from message as JSON format
@@ -42,24 +20,30 @@ else:
 pariticpans = MessageService.getParticipantsName(jsonData)
 
 
-
+print("")
+print("")
+print(" EXPORT DU :", MessageService.getPeriod(jsonData))
+print("")
+print("")
 print("_____ MOST CHARACTER WRITTEN SCORE ____")
 print("")
 pprint(MessageService.mostCharacterWritten(jsonData))
 print("_______________________________")
-
+print("")
+print("```````````````````````````````````````")
+print("```````````````````````````````````````")
 print("_____ MOST MESSAGE SEND ____")
 print("")
 pprint(MessageService.mostMessageSend(jsonData))
 print("_______________________________")
+print("")
+print("```````````````````````````````````````")
+print("```````````````````````````````````````")
+print("_____ BIGGEST PAVE SEND ____")
+print("")
+pprint(MessageService.getBiggestPave(jsonData))
+print("_______________________________")
 
 
-
-
-
-
-# with open('message_neungruetai.json') as message:
-#   data = json.load(message)
-
-# pprint(data)
-# pprint(data["messages"])
+#GraphService.timeBetweenMessages(jsonData)
+GraphService.frequencyMessage(jsonData)

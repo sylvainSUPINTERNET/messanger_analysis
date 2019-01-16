@@ -1,18 +1,14 @@
 import src.utils as Utils
 import json
-from pprint import pprint
-
-import numpy as np
 
 """
 Parse messanger message format JSON
 """
 
 
-def parseMessage(filename):
+def parseMessage(filename="message_umber.json"):
     with open(filename) as messages:
         data = json.load(messages)
-        # print(data)
         return data
 
 
@@ -36,6 +32,15 @@ Return type of thread messanger (if exist)
 
 def getThreadType(jsonMsgData):
     return jsonMsgData["thread_type"]
+
+
+"""
+Return export date (CUSTOM FIELD)
+"""
+
+
+def getPeriod(jsonMsgData):
+    return jsonMsgData["period__c"]
 
 
 """
@@ -96,14 +101,22 @@ def mostMessageSend(jsonMsgData):
 
     return Utils.sortDictDesc(score)
 
+
 """
 Return biggest pave DESC (score)
 """
 
 
 def getBiggestPave(jsonMsgData):
-    return "todo"
+    participants = getParticipantsName(jsonMsgData)
+    score = {}
 
-# TODO
-# Courbe de frequence de messages
-# Courbe de temps entre chaque message
+    # init score
+    for name in participants:
+        score[name] = 0
+
+    for message in getMessages(jsonMsgData):
+        score[message["sender_name"]] = Utils.compare(score[message["sender_name"]], len(message["content"]))
+
+    return Utils.sortDictDesc(score)
+
