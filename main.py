@@ -51,7 +51,8 @@ MessageService.calculResponseTimeBetween2Messages(jsonData);
 # TODO histogramme en %  des stats simple genre most messages sended / characters wirtten etc
 # TODO curve mias avant calculer le response time / frequency
 #GraphService.timeBetweenMessages(jsonData)
-#GraphService.curveCompareFrequencyAndResponseTime(jsonData)
+GraphService.curveCompareFrequencyAndResponseTime(jsonData)
+GraphService.drawRadarAmountOfMessageByParticipants(jsonData)
 
 
 
