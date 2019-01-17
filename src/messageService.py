@@ -36,15 +36,6 @@ def getThreadType(jsonMsgData):
 
 
 """
-Return export date (CUSTOM FIELD)
-"""
-
-
-def getPeriod(jsonMsgData):
-    return jsonMsgData["period__c"]
-
-
-"""
 Return boolean - true if still participants in group // false
 """
 
@@ -122,11 +113,12 @@ def getBiggestPave(jsonMsgData):
     return Utils.sortDictDesc(score)
 
 
-
 # bon ca A VOIR
 """
 Return dictionnary -> time between 2 messages (message 1 - timestamp : message 2 - timestamp, message 2 ....)
 """
+
+
 def calculResponseTimeBetween2Messages(jsonMsgData):
     response_times = {}
 

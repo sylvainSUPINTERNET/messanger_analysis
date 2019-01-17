@@ -27,6 +27,7 @@ def drawRadarAmountOfMessageByParticipants(jsonMsgData):
     )]
 
     layout = go.Layout(
+        title='Amount of message by participants',
         polar=dict(
             radialaxis=dict(
                 visible=True,
@@ -38,6 +39,27 @@ def drawRadarAmountOfMessageByParticipants(jsonMsgData):
 
     fig = go.Figure(data=data, layout=layout)
     return plotly.offline.plot(fig, filename="dist/amount_message_by_participants")
+
+
+def drawMostCharactersWritten(jsonMsgData):
+    x = []
+    y = []
+
+    for message in MessageService.mostCharacterWritten(jsonMsgData):
+        x.append(message[0])
+        y.append(message[1])
+
+    data = [go.Bar(
+        x=x,
+        y=y
+    )]
+
+    layout = go.Layout(
+        title='Most characters written')
+
+    fig = go.Figure(data=data, layout=layout)
+
+    plotly.offline.plot(fig, filename='dist/most_characters_written')
 
 
 """
@@ -85,7 +107,7 @@ def curveCompareFrequencyAndResponseTime(jsonMsgData):
         )
     )
     fig = go.Figure(data=data, layout=layout)
-    plot_url = plotly.offline.plot(fig, filename='./dist/frequency_responseTime_messages_stats')
+    plot_url = plotly.offline.plot(fig, filename='dist/frequency_responseTime_messages_stats')
     return "rate TODO"
 
 # todo http://lablanchisserie.fr/extern-links/iim/python/Projet%20de%20la%20semaine%20data%20science.pdf
