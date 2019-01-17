@@ -108,9 +108,32 @@ def drawTimeCurveBetweenEachMessages(jsonMsgData):
         name='lines'
     )
 
+
+
     data = [trace0]
 
-    plotly.offline.plot(data, filename='time_curve_between_each_messages')
+    layout = go.Layout(
+        title='Curve time between each messages (ms)',
+        xaxis=dict(
+            title='x ms',
+            titlefont=dict(
+                family='Courier New, monospace',
+                size=18,
+                color='#7f7f7f'
+            )
+        ),
+        yaxis=dict(
+            title='y ms',
+            titlefont=dict(
+                family='Courier New, monospace',
+                size=18,
+                color='#7f7f7f'
+            )
+        )
+    )
+
+    fig = go.Figure(data=data, layout=layout)
+    plotly.offline.plot(fig, filename='time_curve_between_each_messages')
 
 
 """
