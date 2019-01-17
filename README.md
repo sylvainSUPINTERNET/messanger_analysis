@@ -91,7 +91,7 @@ Génération d'un rendu visuel pour chaque graphique au format HTML5 (graphiques
     Terminal (bref résumé)
 </li>
 <li>
-    HTML5 (ouvert automatiqueemnt pendant l'exécution du script main.py)
+    HTML5 (ouvert automatiquement pendant l'exécution du script main.py)
 </li>
 </ul>
        
