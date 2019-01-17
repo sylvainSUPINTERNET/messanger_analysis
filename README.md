@@ -112,7 +112,7 @@ sylvain.joly
 │   │   utils.py // cool methods
 │   
 │   
-└───charts
+└───charts // save charts generated 
     │   .gitkeep
 ```
  
