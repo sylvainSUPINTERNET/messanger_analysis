@@ -18,3 +18,7 @@ def average(list):
 
 def convertMsInDatetime(ms):
     return datetime.datetime.fromtimestamp(ms / 1000.0).strftime("%Y-%m-%d %H:%M:%S")
+
+
+def middle(list):
+    return sorted(list)[len(list) // 2]

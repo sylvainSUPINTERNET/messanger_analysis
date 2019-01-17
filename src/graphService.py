@@ -1,5 +1,6 @@
 import src.messageService as MessageService
 import src.utils as Utils
+
 import plotly.plotly as py
 import plotly.graph_objs as go
 import plotly.graph_objs
@@ -41,6 +42,11 @@ def drawRadarAmountOfMessageByParticipants(jsonMsgData):
     return plotly.offline.plot(fig, filename="dist/amount_message_by_participants")
 
 
+"""
+Draw radar - most characters written
+"""
+
+
 def drawMostCharactersWritten(jsonMsgData):
     x = []
     y = []
@@ -60,6 +66,51 @@ def drawMostCharactersWritten(jsonMsgData):
     fig = go.Figure(data=data, layout=layout)
 
     plotly.offline.plot(fig, filename='dist/most_characters_written')
+
+
+"""
+Draw radar - biggest pave written
+"""
+
+
+def drawBiggestPave(jsonMsgData):
+    labels = []
+    values = []
+    for message in MessageService.getBiggestPave(jsonMsgData):
+        labels.append(message[0])
+        values.append(message[1])
+
+    trace = go.Pie(labels=labels, values=values)
+
+    return plotly.offline.plot([trace], filename="dist/biggest_pave")
+
+
+"""
+Draw time curve between each messages
+"""
+
+
+def drawTimeCurveBetweenEachMessages(jsonMsgData):
+    timesBetweenMessages = MessageService.timeBetweenEachMessages(jsonMsgData, True)
+
+    # spacing (x)
+    random_x = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000]
+
+    random_y0 = timesBetweenMessages
+    # random_y1 = [9, 2, 3, 4, 5, 6]
+    # random_y2 = [3, 8, 10, 4, 5, 6]
+
+    # Create traces
+    trace0 = go.Scatter(
+        x=random_x,
+        y=random_y0,
+        mode='lines',
+        name='lines'
+    )
+
+    data = [trace0]
+
+    plotly.offline.plot(data, filename='time_curve_between_each_messages')
 
 
 """

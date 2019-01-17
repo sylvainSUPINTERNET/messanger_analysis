@@ -1,6 +1,7 @@
 import src.utils as Utils
 import json
 from pprint import pprint
+import numpy as np
 
 """
 Parse messanger message format JSON
@@ -121,7 +122,6 @@ Return dictionnary -> time between 2 messages (message 1 - timestamp : message 2
 
 def calculResponseTimeBetween2Messages(jsonMsgData):
     response_times = {}
-
     messages_size_limit = len(jsonMsgData["messages"]) - 1
     for index, message in enumerate(getMessages(jsonMsgData)):
         if index < messages_size_limit:
@@ -137,3 +137,25 @@ def calculResponseTimeBetween2Messages(jsonMsgData):
         # print("ok")
         # go 2 by 2 ...
     pprint(response_times)
+
+
+"""
+Return time curve between each messages
+"""
+
+
+def timeBetweenEachMessages(jsonMsgData, default=True):
+    timecurve = []
+    totalMessages = getMessages(jsonMsgData)
+
+    for index, message in enumerate(totalMessages):
+        if index < len(totalMessages) - 1:
+            timecurve.append(message["timestamp_ms"] - totalMessages[index + 1]["timestamp_ms"])
+
+    if default:
+        # return timecurve as Default json format (lastest first > oldest last)
+        return timecurve
+    else:
+        # return timecurve reversed (oldest to lastest)
+        reversed = timecurve[::-1]
+        return reversed
