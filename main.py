@@ -1,8 +1,6 @@
 import src.messageService as MessageService
 import src.graphService as GraphService
-
 from pprint import pprint
-
 
 # Messages from message as JSON format
 jsonData = MessageService.parseMessage('message_umber.json')
@@ -18,7 +16,6 @@ else:
 
 # Participants of conversation (list of names)
 pariticpans = MessageService.getParticipantsName(jsonData)
-
 
 print("")
 print("_____ MOST CHARACTER WRITTEN SCORE ____")
@@ -40,21 +37,8 @@ print("")
 pprint(MessageService.getBiggestPave(jsonData))
 print("_______________________________")
 
-
-
-
-# TODO histogramme en %  des stats simple genre most messages sended / characters wirtten etc
-# TODO curve mias avant calculer le response time / frequency
-#GraphService.timeBetweenMessages(jsonData)
-#GraphService.curveCompareFrequencyAndResponseTime(jsonData)
-#MessageService.calculResponseTimeBetween2Messages(jsonData);
-
-
-
-# call draw
-#GraphService.drawRadarAmountOfMessageByParticipants(jsonData)
-#GraphService.drawMostCharactersWritten(jsonData)
-#GraphService.drawBiggestPave(jsonData)
-
-
+# Draw graphics
+GraphService.drawRadarAmountOfMessageByParticipants(jsonData)
+GraphService.drawMostCharactersWritten(jsonData)
+GraphService.drawBiggestPave(jsonData)
 GraphService.drawTimeCurveBetweenEachMessages(jsonData)
