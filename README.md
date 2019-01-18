@@ -11,10 +11,19 @@ Export d'exemple se passe sur une durée de 15 jours :
 <h4>Base</h4>
 <ul>
 <li>
+  <strong>
  Parse messanger export (json format)    
+    </strong>
 </li>
 <li>
+  <strong>
 Génération d'un rendu visuel pour chaque graphique au format HTML5 (graphiques)
+    </strong>
+</li>
+<li>
+<strong>
+    Traitement de l'ensemble des données du fichier d'export 
+</strong>
 </li>
 </ul>
 
@@ -31,7 +40,13 @@ Génération d'un rendu visuel pour chaque graphique au format HTML5 (graphiques
     <strong>Plus gros message par personne</strong>
 </li>
 <li>
+    <strong>Temps de réponse entre chaque message</strong>
+</li>
+<li>
     <strong>Temps passé entre chaque messages</strong>
+</li>
+<li>
+    <strong>Mot le plus utilisé dans un dictionnaire donné</strong>
 </li>
 
 </ul>
@@ -81,7 +96,7 @@ Génération d'un rendu visuel pour chaque graphique au format HTML5 (graphiques
 ### Get started  
 
 <code>
-    $ python3 main.py 
+    $ python3 ./main.py 
 </code>
       
 ### Display

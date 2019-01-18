@@ -39,7 +39,7 @@ def drawRadarAmountOfMessageByParticipants(jsonMsgData):
     )
 
     fig = go.Figure(data=data, layout=layout)
-    return plotly.offline.plot(fig, filename="charts/amount_message_by_participants")
+    return plotly.offline.plot(fig, filename="charts/amount_message_by_participants.html")
 
 
 """
@@ -65,7 +65,7 @@ def drawMostCharactersWritten(jsonMsgData):
 
     fig = go.Figure(data=data, layout=layout)
 
-    plotly.offline.plot(fig, filename='charts/most_characters_written')
+    plotly.offline.plot(fig, filename='charts/most_characters_written.html')
 
 
 """
@@ -82,7 +82,28 @@ def drawBiggestPave(jsonMsgData):
 
     trace = go.Pie(labels=labels, values=values, title="Biggest Pavé")
 
-    return plotly.offline.plot([trace], filename="charts/biggest_pave")
+    return plotly.offline.plot([trace], filename="charts/biggest_pave.html")
+
+
+"""
+Draw radar - biggest pave written
+"""
+
+
+def drawMostUsedWord(jsonMsgData):
+    labels = []
+    values = []
+
+    wordsCount = MessageService.mostUsedWords(jsonMsgData)
+
+    for word in MessageService.mostUsedWords(jsonMsgData):
+        labels.append(word)
+        values.append(wordsCount[word])
+
+    trace = go.Pie(labels=labels, values=values, title="Most used words in conversation - dico : " + ' - '.join(
+        MessageService.getDictionnaireWords()))
+
+    return plotly.offline.plot([trace], filename="charts/most_used_words.html")
 
 
 """
@@ -105,7 +126,7 @@ def drawTimeCurveBetweenEachMessages(jsonMsgData):
         x=random_x,
         y=random_y0,
         mode='lines',
-        name='lines'
+        name='Time'
     )
 
     data = [trace0]
@@ -131,5 +152,54 @@ def drawTimeCurveBetweenEachMessages(jsonMsgData):
     )
 
     fig = go.Figure(data=data, layout=layout)
-    plotly.offline.plot(fig, filename='charts/time_curve_between_each_messages')
+    plotly.offline.plot(fig, filename='charts/time_curve_between_each_messages.html')
 
+
+
+"""
+Draw time curve between each messages
+"""
+
+
+def drawResponseTimeCurve(jsonMsgData):
+    responseTime = MessageService.timeBetweenEachMessages(jsonMsgData)
+
+    # spacing (x)
+    random_x = [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000]
+
+    random_y0 = responseTime
+    # random_y1 = [9, 2, 3, 4, 5, 6]
+    # random_y2 = [3, 8, 10, 4, 5, 6]
+
+    # Create traces
+    trace0 = go.Scatter(
+        x=random_x,
+        y=random_y0,
+        mode='lines+markers',
+        name='Response time'
+    )
+
+    data = [trace0]
+
+    layout = go.Layout(
+        title='Response time curve (ms)',
+        xaxis=dict(
+            title='x ms',
+            titlefont=dict(
+                family='Courier New, monospace',
+                size=18,
+                color='#7f7f7f'
+            )
+        ),
+        yaxis=dict(
+            title='y ms',
+            titlefont=dict(
+                family='Courier New, monospace',
+                size=18,
+                color='#7f7f7f'
+            )
+        )
+    )
+
+    fig = go.Figure(data=data, layout=layout)
+    plotly.offline.plot(fig, filename='charts/time_curve_between_each_messages.html')

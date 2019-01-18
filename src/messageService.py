@@ -114,7 +114,6 @@ def getBiggestPave(jsonMsgData):
     return Utils.sortDictDesc(score)
 
 
-# bon ca A VOIR
 """
 Return dictionnary -> time between 2 messages (message 1 - timestamp : message 2 - timestamp, message 2 ....)
 """
@@ -131,12 +130,6 @@ def calculResponseTimeBetween2Messages(jsonMsgData):
 
             response_times["msg_" + index.__str__()] = [message["timestamp_ms"],
                                                         getMessages(jsonMsgData)[index + 1]["timestamp_ms"]]
-
-        # print(message["timestamp_ms"])  # timestamp msg1
-        # print(getMessages(jsonMsgData)[index + 1]["timestamp_ms"])  # response timestamp to msg1
-        # print("ok")
-        # go 2 by 2 ...
-    pprint(response_times)
 
 
 """
@@ -159,3 +152,60 @@ def timeBetweenEachMessages(jsonMsgData, default=True):
         # return timecurve reversed (oldest to lastest)
         reversed = timecurve[::-1]
         return reversed
+
+
+"""
+Return answers message
+"""
+
+
+def answersTheMost(jsonMsgData):
+    totalMessages = getMessages(jsonMsgData)
+    limit = len(getMessages(jsonMsgData))
+
+    participants = getParticipantsName(jsonMsgData)
+    responseCount = []
+
+    for index, message in enumerate(totalMessages):
+        j = index + 1
+        if j >= limit:
+            print("stop return here")
+        else:
+            responseCount.append(message["timestamp_ms"] - (totalMessages[j]["timestamp_ms"]))
+
+    return responseCount
+
+
+"""
+Read dictionnary file (default : exemple_words.json)
+"""
+
+
+def getDictionnaireWords(dictionnary='./exemple_words.json'):
+    with open(dictionnary) as words:
+        dico = json.load(words)
+    return dico;
+
+
+"""
+Return most used words
+"""
+
+
+def mostUsedWords(jsonMsgData, dictionnary='./exemple_words.json'):
+    countWords = {}
+
+    with open(dictionnary) as words:
+        dico = json.load(words)
+
+    # init words
+    for word in dico:
+        countWords[word] = 0
+
+    for message in getMessages(jsonMsgData):
+        for wordSentence in message["content"].split():
+            for index, wordDico in enumerate(countWords):
+                if wordDico == wordSentence:
+                    countWords[wordDico] += 1
+
+    return countWords
